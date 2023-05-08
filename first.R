@@ -1,30 +1,32 @@
 n <- as.integer(readline(prompt = "Enter no of students"))
 
-usn <- vector(mode="character", length= n) 
-name <- vector(mode="character", length= n)
-marks <- vector(mode="character", length= n)
+USN <- vector(mode="character", length= n) 
+Name <- vector(mode="character", length= n)
+Marks <- vector(mode="numeric", length= n)
 
-print("Enter usn,name ,marks")
-for (i in 1:n){
-	usn[i] <- as.character(readline())
-	name [i] <-as.character(readline())
-	marks[i] <- as.integer(readline())
-	}
+print("Enter USN")
+for (i in 1:n)
+	USN[i] <- as.character(readline())
+print("Enter Name")
+for (i in 1:n)
+	Name [i] <- as.character(readline())
+print("Enter Marks" )
+for (i in 1:n)
+	Marks[i] <- as.integer(readline())
 	
-student <- data.frame(usn,name,marks)
+	
+student <- data.frame(USN,Name,Marks)
 print("The Student detials are as follows") 
 print(student)
 
 print("Enter Age")
-age <- vector(mode="numeric", length=n)
-for (i in 1:n){
-	age [i] <- as.integer(readline())
-}
-student <- cbind(student,age)
+Age <- vector(mode="integer", length=n)
+for (i in 1:n)
+	Age [i] <- as.integer(readline())
+student <- cbind(student,Age)
 print(student)
 
-for(i in 1:n){
-	if ( student[i,][3] > 25 )
-		if (student[i,][4] < 20)
+for(i in 1:n)
+	if ( student[i,][4] < 20 )
+		if (student[i,][3] > 25)
 			print(student[i,])
-}
